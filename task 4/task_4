@@ -1,0 +1,63 @@
+Last login: Sun May 29 23:55:41 on ttys000
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % cd destop
+cd: no such file or directory: destop
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % ls
+Applications		Movies			Task
+Desktop			Music			a.txt
+Documents		Pictures		eclipse
+Downloads		Public			eclipse-workspace
+Library			PycharmProjects
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % nano video.txt
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % nano audio.csv
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % nano vdocuments.txt
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % nano image.dat
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % nano other.csv 
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % ls
+Applications		Pictures		eclipse-workspace
+Desktop			Public			image.dat
+Documents		PycharmProjects		other.csv
+Downloads		Task			vdocuments.txt
+Library			a.txt			video.txt
+Movies			audio.csv
+Music			eclipse
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % ls *.txt
+a.txt		vdocuments.txt	video.txt
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % ls v*
+vdocuments.txt	video.txt
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % grep -1 MP4*.*
+zsh: no matches found: MP4*.*
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % grep -1 MP4 *.*
+zsh: no matches found: MP4*.*
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % grep -1 MP4 *.*              
+audio.csv:MP3, WAV, OGG, MP4
+audio.csv-
+--
+other.csv:CSV, JSON, XML, HTML, ZIP, MP4
+--
+video.txt:AVI, MOV, MP4, OGG, WMV, WEBM
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % grep -1 MP4 *.*              
+audio.csv:MP3, WAV, OGG, MP4
+audio.csv-
+--
+other.csv:CSV, JSON, XML, HTML, ZIP, MP4
+--
+video.txt:AVI, MOV, MP4, OGG, WMV, WEBM
+(base) esakkimuthumurugan@AGLS-MLT-635 ~ % l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
