@@ -1,63 +1,58 @@
-fromgoogleapiclient.discoveryimportbuild
-importpandasaspd
-fromdateutilimportparser
-importscrapetube
-importgoogle_auth_oauthlib
-fromtimeimportsleep
-fromsocial_media.datacleanimportClean
-fromyoutube_comment_downloaderimport*
-fromitertoolsimportislice
+from googleapiclient.discovery import build
+import pandas as pd
+from dateutil import parser
+import scrapetube
+import google_auth_oauthlib
+from time import sleep
+from social_media.dataclean import Clean
+from youtube_comment_downloader import *
+from itertools import islice
 
 
-classYouTube:
-def__init__(self):
-api_key='AIzaSyAyeBV93eJxh4_W3cyFqJz8XaylNgz0xc4'
-channel_id='UCgQEM4eg3aWn1qgo1vy1Qig'
-
-#youtube=build('youtube','v3',developerKey=api_key)
-
-api_service_name="youtube"
-api_version="v3"
-
-self.youtube=build(api_service_name,api_version,developerKey=api_key)
+class YouTube:
+    def__init__(self):
+        api_key='AIzaSyAyeBV93eJxh4_W3cyFqJz8XaylNgz0xc4'
+        channel_id='UCgQEM4eg3aWn1qgo1vy1Qig'
+        #youtube=build('youtube','v3',developerKey=api_key)
+        api_service_name="youtube"
+        api_version="v3"
+        self.youtube=build(api_service_name,api_version,developerKey=api_key)
 
 
-defget_video_details(self,video_ids):
-all_video_info=[]
-i=len(video_ids)
-j=len(video_ids)
-whileTrue:
-if0<i-49:
-i-=49
-request=self.youtube.videos().list(
-part="snippet,contentDetails,statistics",
-id=video_ids[i:j])
-response=request.execute()
-j-=49
-else:
-request=self.youtube.videos().list(
-part="snippet,contentDetails,statistics",
-id=video_ids[0:i])
-response=request.execute()
-i=0
+    def get_video_details(self,video_ids):
+        all_video_info=[]
+        i=len(video_ids)
+        j=len(video_ids)
+        while True:
+            if  0<i-49:
+                i-=49
+                request=self.youtube.videos().list(
+                part="snippet,contentDetails,statistics",
+                id=video_ids[i:j])
+                response=request.execute()
+                j-=49
+             else:
+                request=self.youtube.videos().list(
+                part="snippet,contentDetails,statistics",
+                id=video_ids[0:i])
+                response=request.execute()
+                i=0
+                for video in response['items']:
+                    stats_to_keep={'snippet':['channelTitle','title','description','tags','publishedAt'],
+                                                    'statistics':['viewCount','likeCount','commentCount'],
+                                                      'contentDetails':['duration','definition','caption']}
+                    video_info={}
+                    video_info['video_id']=video['id']
 
-forvideoinresponse['items']:
-stats_to_keep={'snippet':['channelTitle','title','description','tags','publishedAt'],
-'statistics':['viewCount','likeCount','commentCount'],
-'contentDetails':['duration','definition','caption']
-}
-video_info={}
-video_info['video_id']=video['id']
-
-forkinstats_to_keep.keys():
-forvinstats_to_keep[k]:
-try:
-video_info[v]=video[k][v]
-except:
-video_info[v]=None
-all_video_info.append(video_info)
-ifi==0:
-break
+                    for k in stats_to_keep.keys():
+                        for v in stats_to_keep[k]:
+                            try:
+                                video_info[v]=video[k][v]
+                            except:
+                                video_info[v]=None
+                        all_video_info.append(video_info)
+            if i==0:
+                break
 
 #df['leader']=[leader]*len(df)
 #df['party']=[party]*len(df)
