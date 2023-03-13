@@ -54,18 +54,18 @@ class YouTube:
             if i==0:
                 break
 
-#df['leader']=[leader]*len(df)
-#df['party']=[party]*len(df)
-returnpd.DataFrame(all_video_info)
-defextract_comment(self,video_ids):
-all_video_info=[]
-downloader=YoutubeCommentDownloader()
-forxinvideo_ids:
-comments=downloader.get_comments_from_url(f'https://www.youtube.com/watch?v={x}')
-forcommentinislice(comments,3000):
-comment['videoId']=x
-all_video_info.append(comment)
-returnall_video_info
+        #df['leader']=[leader]*len(df)
+        #df['party']=[party]*len(df)
+        return pd.DataFrame(all_video_info)
+    def extract_comment(self,video_ids):
+    all_video_info=[]
+    downloader=YoutubeCommentDownloader()
+    for x in video_ids:
+        comments=downloader.get_comments_from_url(f'https://www.youtube.com/watch?v={x}')
+        for comment in islice(comments,3000):
+            comment['videoId']=x
+            all_video_info.append(comment)
+    return all_video_info
 #pd.DataFrame(all_video_info)
 
 #defextract_comment(self,video_ids):
@@ -95,9 +95,9 @@ returnall_video_info
 ##df['party']=[party]*len(df)
 #returnpd.DataFrame(all_video_info)
 
-defvideo_id(self,videos_json):
-Links=[x['videoId']forxinvideos_json]
-returnLinks
+    def video_id(self,videos_json):
+        Links=[x['videoId']forxinvideos_json]
+        return Links
 
 
 
