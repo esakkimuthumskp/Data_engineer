@@ -21,6 +21,13 @@ is reaching out to the public or not? and If Not, then what are the steps we can
 them more aware of Modern Technology.</p>
   
   <h5>Total Number of Rows in dataset: 1 million (Approx)</h5>
+ 
+ Dashboard:
+https://public.tableau.com/app/profile/esakkimuthu.m/viz/Book2_16727742929250/Story3?publish=yes
+
+
+Deshboard with Story
+https://public.tableau.com/app/profile/esakkimuthu.m/viz/Book2_16727742929250/Story2?publish=yes
 
 
 Social Media Analytics Framework in Political Context  
