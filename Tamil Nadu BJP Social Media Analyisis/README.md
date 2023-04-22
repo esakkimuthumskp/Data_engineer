@@ -1,5 +1,5 @@
 <H1><br>Tamil Nadu BJP of Social Media Analysis</br></h1>
-Source: YouTube API, Twitter API
+<h6>Source: YouTube API, Twitter API</h6>
 
 
 Social Media Analytics Framework in Political Context  
@@ -10,4 +10,3 @@ Data Tracking and Monitoring
 
 Data Analysis  
 <img src="https://user-images.githubusercontent.com/103558624/233796249-d7af5493-c678-49b3-b5ba-c2169a3962fd.png" width="500"/>
-
